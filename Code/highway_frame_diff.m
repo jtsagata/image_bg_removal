@@ -16,12 +16,6 @@ skip_frames = 470;
 first_frames = video(:,:,:,1:skip_frames-1);
 video_frames = video(:,:,:,skip_frames:size(video,4));
 
-% Storage for output Videos
-video_noBg   = zeros(size(video_frames),'uint8');
-video_BgOnly = zeros(size(video_frames),'uint8');
-video_Boxes = zeros(size(video_frames),'uint8');
-
-
 % Storage for montage Video
 [width,height,depth,frames]=size(video_frames);
 montage = zeros([width*2,height*2,depth,frames],'uint8');
@@ -65,9 +59,6 @@ for k=1:min(size(video_frames,4),max_frames)
     text_str = ['Frame: ' num2str(k+skip_frames,'%4d') ];
     cur_img = insertText(cur_img, [5,25], text_str, 'AnchorPoint','LeftBottom','TextColor','red');
     
-    % Update Videos
-    video_noBg(:,:,:,k) = new_frame_noBG;
-    video_BgOnly(:,:,:,k) = current_background;
     % Montage
     montage(:,:,:,k) = [cur_img, new_frame_noBG; cur_bgr, color_frame];
 end
@@ -75,5 +66,5 @@ end
 h=implay(montage);
 h.Parent.Position = [100 100 700 550];
 
-%videoSave('../Videos/bgsub_framediff_highway.avi',video_annot,10);
-%video_to_img_seq(video_annot,'../Videos/bgsub_framediff_highway.png');
+videoSave('../Videos/highway_frame_diff.avi',montage,10);
+video_to_img_seq(montage,'../Videos/highway_frame_diff.png');
