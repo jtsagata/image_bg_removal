@@ -44,7 +44,11 @@ for i=1:NumImages
 end
 disp(' ... OK!');
 
-save('highway.mat', 'ImSeq','-v7.3');
-disp(' Saving ... DONE!');
+dVideo = ImSeq;
+save('highway.mat', 'dVideo','-v7.3');
+disp(' Saving Double... DONE!');
 whos('-file','highway.mat')
 
+video = uint8(ImSeq);
+save('../Data/highway8.mat','video','-v7.3');
+disp(' Saving int8... DONE!');

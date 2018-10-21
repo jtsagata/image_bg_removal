@@ -42,7 +42,8 @@ for i=1:NumImages
 end
 disp(' ... OK!');
 
-save('gtruth.mat', 'ImSeq','-v7.3');
+gTruth = uint8(ImSeq);
+save('gtruth.mat', 'gTruth','-v7.3');
 disp(' Saving ... DONE!');
 whos('-file','gtruth.mat')
 
