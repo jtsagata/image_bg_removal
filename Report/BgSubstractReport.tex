@@ -63,6 +63,21 @@ And a code to save the video sequence as a playable video on hard disk.
 
 \lstinputlisting[style=My-Matlab]{../Code/videoSave.m}
 
+Finnaly a fuction is created to save some frames in png file format.
+\lstinputlisting[style=My-Matlab]{../Code/video_to_img_seq.m}
+
+\subsection{Cars Sequence}
+Let's apply the algorithm to the \texttt{'cars'} sequence.
+\lstinputlisting[style=My-Matlab]{../Code/bgsub_demo_cars_fdiff.m}
+
+Some frames is given in Figure~\ref{fig:fdiff_cars} on page \pageref{fig:fdiff_cars}.
+
+\begin{figure}[Ht]
+\centering
+\includegraphics{../Videos/bgsub_framediff_cars.png}
+\label{fig:fdiff_cars}
+\caption{Frame differencing for the cars sequence}
+\end{figure}
 
 \vfill
 \noindent Tools used: \texttt{Matlab}, \LaTeX{}.
