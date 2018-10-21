@@ -46,13 +46,15 @@ for k=1:min(size(video_frames,4),max_frames)
     
     color_frame = cur_img;
     track_objects=3;
-    maxArea = 80;
+    maxArea = 40;
     [maxAreas, indexOfMaxes] = maxk([st.Area],track_objects);
     for ob=1:min(track_objects, size(st,1))
-        bb = st(indexOfMaxes(ob)).BoundingBox;
-        % Add the bounding box
-        color_frame=insertShape(color_frame,'rectangle',bb, 'LineWidth', 2, 'Color', 'red');
-        new_frame_noBG=insertShape(new_frame_noBG,'rectangle',bb, 'LineWidth', 2, 'Color', 'red');
+        if  st(indexOfMaxes(ob)).Area > maxArea
+            bb = st(indexOfMaxes(ob)).BoundingBox;
+            % Add the bounding box
+            color_frame=insertShape(color_frame,'rectangle',bb, 'LineWidth', 2, 'Color', 'red');
+            new_frame_noBG=insertShape(new_frame_noBG,'rectangle',bb, 'LineWidth', 2, 'Color', 'red');
+        end
     end
     
     % Add a frame number
