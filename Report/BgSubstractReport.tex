@@ -45,11 +45,25 @@
  
 \maketitle
 
-\section*{Data Preperation}
+\section{Data Preperation}
 To speed up development the image files are read only once and saved as \texttt{'mat'} files. The code for the \texttt{'gtruth.mat'} file is given bellow. The code for the other image sequences is simmilar and it is on the github repository.
 
 \lstinputlisting[style=My-Matlab, firstline=15]{../Data/prepare_data_gtruth.m}
 
+\section{Frame differencing}
+The following matlab function implements the \textit{Frame differencing} method.
+
+\lstinputlisting[style=My-Matlab]{../Code/bgsub_frame_diff.m}
+
+To demonstrate we need a fuction to annotate the video with data like frame number and location, and with a bounding box around the main moving object of the scene.
+
+\lstinputlisting[style=My-Matlab]{../Code/anotate_video_box.m}
+
+And a code to save the video sequence as a playable video on hard disk.
+
+\lstinputlisting[style=My-Matlab]{../Code/videoSave.m}
+
+
 \vfill
-\noindent Tools used: \texttt{clang++}, \texttt{clion},  \texttt{cmake}, \LaTeX{}, \texttt{clang-format}, \texttt{graphviz dot}.
+\noindent Tools used: \texttt{Matlab}, \LaTeX{}.
 \end{document}
