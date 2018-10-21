@@ -1,0 +1,44 @@
+% rubber: set program xelatex
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{xltxtra}
+\usepackage{amsmath,amsthm,amssymb}
+
+\usepackage[autostyle=true]{csquotes}
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\setotherlanguage[variant=mono]{greek}
+
+% Fonts
+\setmainfont{CMU Serif}                 
+\setsansfont{CMU Sans Serif}            
+\setmonofont{CMU Typewriter Text}
+
+
+\usepackage[margin=1in]{geometry} 
+
+% Source code listings
+\usepackage{listings}
+\usepackage{color}
+\lstset{language=C++,basicstyle=\ttfamily\small, keywordstyle=\color{blue}\ttfamily,
+        stringstyle=\color{red}\ttfamily,  commentstyle=\color{magenta}\ttfamily,
+        showstringspaces=false, numbers=none, morecomment=[l][\color{green}]{\#}}
+
+% Disable paragraph intention 
+\setlength\parindent{0pt}  
+
+\usepackage{multicol} 
+
+\begin{document}
+\title{ Multi-Sensors Fusion and Tracking\\Vibot Program 2018-2019}
+\author{Ioannis Tsagatakis\\
+1\textsuperscript{st} Assignment: Background Subtraction} 
+ 
+\maketitle
+
+\section*{Data Preperation}
+
+
+\vfill
+\noindent Tools used: \texttt{clang++}, \texttt{clion},  \texttt{cmake}, \LaTeX{}, \texttt{clang-format}, \texttt{graphviz dot}.
+\end{document}
