@@ -45,6 +45,6 @@ disp(' ... OK!');
 
 video = ImSeq;
 
-save('cars.mat', '-v7.3');
+save('cars.mat', 'ImSeq', '-v7.3');
 
 
