@@ -91,11 +91,30 @@ Some frames is given in Figure~\ref{fig:fdiff_cars} on page \pageref{fig:fdiff_c
 
 The highway sequence is in color. So we modify the algorithm. An Eucledian metric is used  to estimate the threshold of a given pixel form the background. Also the confusion matrix is calculated. After many revisions the final code is given bellow
 
+\vspace{10pt}
 \lstinputlisting[style=My-Matlab]{../Code/highway_frame_diff.m}
+\vspace{30pt}
 
 Some frames is given in Figure~\ref{fig:fdiff_highway} on page \pageref{fig:fdiff_highway}.
 
+\section{The Running Average Gaussian Method}
 
+\subsection{Cars Sequence}
+
+The code that implements the Running Average Gaussian Method on the cars sequence is given bellow 
+
+\vspace{10pt}
+\lstinputlisting[style=My-Matlab]{../Code/a3_gaussian.m}
+\vspace{30pt}
+
+Some frames is given in Figure~\ref{fig:a3_gaussian_cars} on page \pageref{fig:a3_gaussian_cars}.
+\centering
+\begin{figure}[Ht]
+\includegraphics{../Videos/a3_gaussian.png}
+\label{fig:a3_gaussian_cars}
+\caption{Frame differencing for the highway sequence}
+\end{figure}
+ 
 
 \vfill
 \noindent Tools used: \texttt{Matlab}, \LaTeX{}.
