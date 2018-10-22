@@ -57,6 +57,13 @@ The following matlab function implements the \textit{Frame differencing} method.
 
 To demonstrate we need a fuction to annotate the video with data like frame number and location, and with a bounding box around the main moving object of the scene.
 
+\begin{figure}[Ht]
+\centering
+\includegraphics{../Videos/bgsub_framediff_cars.png}
+\label{fig:fdiff_cars}
+\caption{Frame differencing for the cars sequence}
+\end{figure}
+
 \lstinputlisting[style=My-Matlab]{../Code/anotate_video_box.m}
 
 And a code to save the video sequence as a playable video on hard disk.
@@ -72,12 +79,23 @@ Let's apply the algorithm to the \texttt{'cars'} sequence.
 
 Some frames is given in Figure~\ref{fig:fdiff_cars} on page \pageref{fig:fdiff_cars}.
 
+
+\subsection{Highway Sequence}
+
 \begin{figure}[Ht]
 \centering
-\includegraphics{../Videos/bgsub_framediff_cars.png}
-\label{fig:fdiff_cars}
-\caption{Frame differencing for the cars sequence}
+\includegraphics{../Videos/highway_frame_diff.png}
+\label{fig:fdiff_highway}
+\caption{Frame differencing for the highway sequence}
 \end{figure}
+
+The highway sequence is in color. So we modify the algorithm. An Eucledian metric is used  to estimate the threshold of a given pixel form the background. Also the confusion matrix is calculated. After many revisions the final code is given bellow
+
+\lstinputlisting[style=My-Matlab]{../Code/highway_frame_diff.m}
+
+Some frames is given in Figure~\ref{fig:fdiff_highway} on page \pageref{fig:fdiff_highway}.
+
+
 
 \vfill
 \noindent Tools used: \texttt{Matlab}, \LaTeX{}.

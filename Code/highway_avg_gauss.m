@@ -19,7 +19,7 @@ cur_bgr = median(double(first_frames),4);
 
 % Parameters
 threshold = 110;
-alpha = 0.05;
+alpha = 0.01;
 im2bw_level = 0.1;
 track_objects=6;
 maxArea = 40;
