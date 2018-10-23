@@ -48,7 +48,7 @@
  
 \maketitle
 
-I haven't manage to implement all methods in the given amount of time and with my limited computational resources. The code and the result videos van be found in the following gtihub repository \url{https://github.com/jtsagata/image_bg_removal}.
+I haven't manage to implement all methods in the given amount of time and with my limited computational resources. The code and the result videos van be found in the following gtihub repository \url{https://github.com/jtsagata/image_bg_removal}. Please check there for the code and maybe imporoved versions of the code and the report.
 
 \section{Data Preperation}
 To speed up development the image files are read only once and saved as \texttt{'mat'} files. The code for the \texttt{'gtruth.mat'} file is given bellow. The code for the other image sequences is simmilar and it is on the github repository.
@@ -164,13 +164,20 @@ The precission, recall an F-score of the method is given bellow:
 %% EIGEN BACKGROUND
 %% 
 \section{Eigen Background}
-Code for the eigen background method (slow, memory hog, not working).
+Code for the eigen background method.
 
 \vspace{10pt}
 \lstinputlisting[style=My-Matlab]{../Code/a5_eigen.m}
 \vspace{30pt}
 
+Some frames is given in Figure~\ref{fig:svgCars} on page \pageref{fig:svgCars}.
 
+\begin{figure}[Ht]
+\centering
+\includegraphics{../Videos/a5_eigen.png}
+\label{fig:svgCars}
+\caption{Eigen Background for the cars sequence}
+\end{figure}
 
 \vfill
 \noindent Tools used: \texttt{Matlab}, \LaTeX{}.

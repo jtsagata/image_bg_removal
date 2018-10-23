@@ -31,13 +31,13 @@ videoAsCols_norm = videoAsCols - repmat(mean_vector,1, frames);
 [U,~,~]=svd(videoAsCols_norm);
 
 % Get first ratio columns as eigen background
-keep_cols = 10000;
+keep_cols = 10;
 Uk=U(:,1:keep_cols);
 Uk_t=transpose(Uk);
 clear 'U'
 
 video_noBg = zeros(size(video_small));
-threshold = 60;
+threshold =  20;
 
 for k=1:frames
     curr_frame = video_small(otherdims{:},k);
@@ -46,7 +46,8 @@ for k=1:frames
     y = Uk*p + mean_vector;
     
     background=reshape(y,size(curr_frame));
-    idx = abs(background-curr_frame) > threshold;
+    dif = abs(background-curr_frame); 
+    idx = dif > threshold;
     
     new_frame = zeros(size(curr_frame));
     new_frame(idx) = curr_frame(idx); 
@@ -56,14 +57,9 @@ for k=1:frames
 end
 
 
-return
 
-
-%% RESULTS
-
-% Show Video
-implay8(ImSeq_noBg);
-video_annot = anotate_video_box(uint8(ImSeq_noBg));
+%implay8(ImSeq_noBg);
+video_annot = anotate_video_box(uint8(video_noBg));
  
 videoSave('../Videos/a5_eigen.avi',video_annot,10);
 video_to_img_seq(video_annot,'../Videos/a5_eigen.png');
